@@ -1,0 +1,63 @@
+Welcome to DrRacket, version 7.7 [cs].
+Language: Determine language from source; memory limit: 128 MB.
+> (+ 1 4)
+5
+> (define (square x) (* x x))
+> (square 5)
+25
+> (define (average x y) (/ (+ x y) 2))
+> (average 6 8)
+7
+> (define (abs x)
+    (cond ((> x 0) x)
+              ((= x 0) 0)
+              ((< x 0) (- x))))
+> (abs -5)
+5
+> (abs 5)
+5
+> 10
+10
+> (10)
+. . application: not a procedure;
+ expected a procedure that can be applied to arguments
+  given: 10
+> (10 ())
+. #%app: missing procedure expression;
+ probably originally (), which is an illegal empty application in: (#%app)
+> 10
+10
+> (+ 5 3 4)
+12
+> (- 9 1)
+8
+> (+ (* 2 5) (- 4 6))
+8
+> (/ 6 2)
+3
+> (define a 3)
+> (define b (+ a 1))
+> (+ a b (* a b))
+19
+> (= a b)
+#f
+> (if (and (> b a) (< b (* a b)))
+      b
+      a)
+4
+> (cond ((= a 4) 6)
+            ((= b 4) (+ 6 7 a))
+            (else 25)
+            )
+16
+> (+ 2 (if (>b a) b a))
+. . >b: undefined;
+ cannot reference an identifier before its definition
+> (+ 2 (if (> b a) b a))
+6
+> (* (cond ((> a b) a)
+               ((< a b) b)
+               (else -1))
+     (+ a 1))
+16
+> 
